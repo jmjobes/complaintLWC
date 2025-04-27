@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <div class="slds-align_absolute-center" style="padding: 10px;">
+            <lightning-formatted-text 
+            value="Please review the below information and if it is correct click Submit.  If not, please click the back button to correct the information." 
+            ></lightning-formatted-text>   
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-input label="First Name" type="text" value={childFirstName} disabled={isDisabled}></lightning-input>
+            <lightning-input label="Last Name" type="text" required value={childLastName} disabled={isDisabled}></lightning-input>
+            <lightning-input label="Email" type="Email" value={childEmail} disabled={isDisabled}></lightning-input>
+            <lightning-input label="Phone" type="Phone" value={childPhone} disabled={isDisabled}></lightning-input>
+            <lightning-radio-group label="Is the above information correct?" options={YesNo} value={childRadioValue} disabled={isDisabled}></lightning-radio-group>
+            <lightning-combobox name="claimType" label="Claim Type" value={valueClaimType} placeholder="Select Claim Type" options={ClaimType} disabled={isDisabled}></lightning-combobox>
+            <lightning-combobox name="dependent" label="Dependent" value={valueDependent} placeholder="Select a Dependent" options={Dependent} disabled={isDisabled}></lightning-combobox>
+            <div class="slds-align_absolute-center" style="padding: 10px;">
+                <lightning-formatted-text 
+                value="You have uploaded the following files: " 
+                ></lightning-formatted-text>   
+            </div>
+            <div class="slds-align_absolute-center" style="padding: 10px;">
+                <lightning-formatted-text name="displayFileNames" value={valueUploadedFileNames}></lightning-formatted-text>
+            </div>
+        </div>
+      </lightning-card>
+</template>

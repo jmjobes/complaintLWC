@@ -1,0 +1,87 @@
+<template>
+    <lightning-card title="Claim Form" icon-name="custom:custom14">
+    <lightning-progress-indicator
+        current-step={currentStep}
+        type="base"
+        variant="base">
+        <lightning-progress-step
+            label="Step 1"
+            value="1"
+        ></lightning-progress-step>
+        <lightning-progress-step
+            label="Step 2"
+            value="2"
+        ></lightning-progress-step>
+        <lightning-progress-step
+            label="Step 3"
+            value="3"
+        ></lightning-progress-step>
+    </lightning-progress-indicator>
+
+    <div class="slds-progress">
+
+        <ol class="slds-progress__list">
+     
+            <div style="margin-left: -0.5rem;">Privacy Notice</div>
+     
+            <div style="margin-left: -0.5rem;">Claim Information</div>
+     
+            <div style="margin-right: -0.5rem;">Upload Forms</div>
+     
+        </ol>
+     
+     </div>
+    
+        <div class="stepOne">
+            <div class="slds-align_absolute-center" style="padding: 100px;">
+                <lightning-formatted-text 
+                value="Privacy Notice:  We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Notice explains how we collect, use, disclose, and safeguard your information when you visit our website." 
+                ></lightning-formatted-text>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button
+                    class="slds-var-m-top_small slds-float_right"
+                    label="Next"
+                    onclick={goToStepTwo}
+                    variant="brand"
+                ></lightning-button>
+            </div>
+        </div>
+        <div class="stepTwo slds-hide">
+            <lightning-record-edit-form object-api-name="Contact">
+            <lightning-input-field field-name="LastName">
+            </lightning-input-field>
+        </lightning-record-edit-form>
+            <lightning-button
+                class="slds-var-m-top_small"
+                label="Previous"
+                onclick={goBackToStepOne}
+                variant="brand"
+            ></lightning-button>
+            <lightning-button
+                class="slds-var-m-top_small"
+                label="Next"
+                onclick={goToStepThree}
+                variant="brand"
+            ></lightning-button>
+        </div>
+        <div class="stepThree slds-hide">
+            <lightning-record-edit-form object-api-name="Contact">
+            <lightning-input-field field-name="Email"> </lightning-input-field>
+        </lightning-record-edit-form>
+            <lightning-button
+                class="slds-var-m-top_small"
+                label="Previous"
+                onclick={goBackToStepTwo}
+                variant="brand"
+            ></lightning-button>
+            <lightning-button
+                class="slds-var-m-top_small"
+                label="Save"
+                type="submit"
+                onclick={handleSave}
+                variant="brand"
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

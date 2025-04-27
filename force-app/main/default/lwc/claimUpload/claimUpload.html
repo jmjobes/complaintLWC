@@ -1,0 +1,52 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_medium">
+            <lightning-file-upload
+            label="Upload Forms"
+            name="formUpload"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleUploadFinishedTwo}
+            multiple>
+            </lightning-file-upload>
+        </div>
+
+        <template if:true={showTable}>
+        <div style="height: 200px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+        </template>
+
+        <div class="slds-align_absolute-center" style="padding: 10px;">
+            <lightning-formatted-text
+            name="displayFileNames" 
+            value={valueUploadedFileNames} 
+            ></lightning-formatted-text>
+        </div>
+
+        <div class="slds-align_absolute-center" style="padding: 10px;">
+            <lightning-formatted-text
+            name="displayFileNames2" 
+            value={uploadedFileOne} 
+            ></lightning-formatted-text>
+        </div>
+
+        <div class="slds-align_absolute-center" style="padding: 10px;">
+            <lightning-formatted-text
+            name="displayFileNames3" 
+            value={uploadedFileTwo} 
+            ></lightning-formatted-text>
+        </div>
+
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Back" onclick={updateParentValuesBack} variant="brand"></lightning-button>
+            &nbsp;&nbsp;
+            <lightning-button label="Next" onclick={updateParentValuesNext} variant="brand"></lightning-button>
+          </div>
+
+      </lightning-card>
+</template>

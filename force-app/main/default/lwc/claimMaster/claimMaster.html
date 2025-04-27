@@ -1,0 +1,122 @@
+<template>
+
+<lightning-card title="Claim Form" icon-name="custom:custom14">
+
+<lightning-progress-indicator
+    current-step={currentStep}
+    type="base"
+    variant="base">
+    <lightning-progress-step label="Step 1" value="1"></lightning-progress-step>
+    <lightning-progress-step label="Step 2" value="2"></lightning-progress-step>
+    <lightning-progress-step label="Step 3" value="3"></lightning-progress-step>
+    <lightning-progress-step label="Step 4" value="4"></lightning-progress-step>
+    <lightning-progress-step label="Step 5" value="5"></lightning-progress-step>
+</lightning-progress-indicator>
+
+<div class="slds-progress">
+    <ol class="slds-progress__list">
+        <div style="margin-left: -0.5rem;">Privacy Notice</div>
+        <div style="margin-left: -0.5rem;">Claim Information</div>
+        <div style="margin-right: -0.5rem;">Upload Forms</div>
+        <div style="margin-right: -0.5rem;">Review and Submit</div>
+        <div style="margin-right: -0.5rem;">Confirmation</div>
+    </ol>
+</div>
+
+<div class="slds-m-around_medium">
+
+    <!-- CMP1 Privacy -->
+    <template if:true={showCMP1}>
+        <div class="stepOne">
+        <c-claim-Privacy></c-claim-Privacy>
+        <!-- Next Button -->
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Next" onclick={goToStepTwo} variant="brand"></lightning-button>
+        </div>
+        </div>
+    </template>
+    
+
+    <!-- CMP2 Claim Info -->
+    <template if:true={showCMP2}>
+        <div class="stepTwo">
+        <c-claim-info 
+        onclaiminfonext = {handleClaimInfoNext}
+        onclaiminfoback = {handleClaimInfoBack} 
+        child-first-name={parentFirstName} 
+        child-radio-value={parentRadioValue}
+        child-last-name={parentLastName}
+        child-email={parentEmail}
+        child-phone={parentPhone}
+        value-claim-type={parentClaimType}
+        value-dependent={parentDependent}
+        ></c-claim-info>
+        <!-- Next and Previous Buttons -->
+        
+        </div>
+    </template>
+    
+
+    <!-- CMP3 Upload -->
+    <template if:true={showCMP3}>
+        <div class="stepThree">
+        <c-claim-upload
+        onclaimuploadnext = {handleClaimUploadNext}
+        onclaimuploadback = {handleClaimUploadBack} 
+        value-uploaded-file-names={parentFileNames} 
+        show-table={parentShowTable}
+        ></c-claim-upload>
+        <!-- Next and Previous Buttons -->
+    </div>
+    </template>
+    <br/>
+
+    <!-- CMP4 Review & Submit -->
+    <template if:true={showCMP4}>
+        <div class="stepFour">
+        <c-claim-review-submit
+        child-first-name={parentFirstName} 
+        child-radio-value={parentRadioValue}
+        child-last-name={parentLastName}
+        child-email={parentEmail}
+        child-phone={parentPhone}
+        value-claim-type={parentClaimType}
+        value-dependent={parentDependent}
+        value-uploaded-file-names={parentFileNames} 
+        ></c-claim-review-submit>
+        <!-- Next and Previous Buttons -->
+        <div class="slds-align_absolute-center">
+            <lightning-button label="Back" variant="brand" onclick={goBackToStepThree}></lightning-button>
+            &nbsp;&nbsp;
+            <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+        </div>
+    </div>
+    </template>
+    <br/>
+
+    <!-- CMP5 Confirmation -->
+    <template if:true={showCMP5}>
+        <div class="stepFive">
+        <c-claim-confirmation></c-claim-confirmation>
+        <!-- Next and Previous Buttons -->
+    </div>
+    </template>
+    <br/>
+
+    <!-- For Testing purpoes 
+    <p class="slds-text-align_center slds-var-m-vertical_medium">
+        Claim Info Yes No Radio: <lightning-formatted-text value={parentRadioValue}></lightning-formatted-text>
+    </p>
+    
+    <p class="slds-text-align_center slds-var-m-vertical_medium">
+        First Name: <lightning-formatted-text value={parentFirstName}></lightning-formatted-text>
+    </p>
+
+    <p class="slds-text-align_center slds-var-m-vertical_medium">
+        Uploaded Files: <lightning-formatted-text value={parentFileNames}></lightning-formatted-text>
+    </p>
+    -->
+
+</div>
+</lightning-card>
+</template>
