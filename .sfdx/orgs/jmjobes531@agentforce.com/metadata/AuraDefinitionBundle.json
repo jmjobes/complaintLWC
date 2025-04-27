@@ -1,0 +1,70 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005gL000001jCZ7QAM",
+      "createdByName": "Jeanne Jobes",
+      "createdDate": "2025-04-14T02:01:40.000Z",
+      "fileName": "aura/forgotPassword",
+      "fullName": "forgotPassword",
+      "id": "0AbgL0000002ojvSAA",
+      "lastModifiedById": "005gL000001jCZ7QAM",
+      "lastModifiedByName": "Jeanne Jobes",
+      "lastModifiedDate": "2025-04-14T02:01:40.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005gL000001jCZ7QAM",
+      "createdByName": "Jeanne Jobes",
+      "createdDate": "2025-04-14T02:01:39.000Z",
+      "fileName": "aura/selfRegister",
+      "fullName": "selfRegister",
+      "id": "0AbgL0000002ojuSAA",
+      "lastModifiedById": "005gL000001jCZ7QAM",
+      "lastModifiedByName": "Jeanne Jobes",
+      "lastModifiedDate": "2025-04-14T02:01:39.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005gL000001jCZ7QAM",
+      "createdByName": "Jeanne Jobes",
+      "createdDate": "2025-04-14T02:01:39.000Z",
+      "fileName": "aura/loginForm",
+      "fullName": "loginForm",
+      "id": "0AbgL0000002ojtSAA",
+      "lastModifiedById": "005gL000001jCZ7QAM",
+      "lastModifiedByName": "Jeanne Jobes",
+      "lastModifiedDate": "2025-04-14T02:01:39.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005gL000001jCZ7QAM",
+      "createdByName": "Jeanne Jobes",
+      "createdDate": "2025-04-14T02:01:38.000Z",
+      "fileName": "aura/setExpId",
+      "fullName": "setExpId",
+      "id": "0AbgL0000002oiHSAQ",
+      "lastModifiedById": "005gL000001jCZ7QAM",
+      "lastModifiedByName": "Jeanne Jobes",
+      "lastModifiedDate": "2025-04-14T02:01:38.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005gL000001jCZ7QAM",
+      "createdByName": "Jeanne Jobes",
+      "createdDate": "2025-04-14T02:01:39.000Z",
+      "fileName": "aura/setStartUrl",
+      "fullName": "setStartUrl",
+      "id": "0AbgL0000002oiISAQ",
+      "lastModifiedById": "005gL000001jCZ7QAM",
+      "lastModifiedByName": "Jeanne Jobes",
+      "lastModifiedDate": "2025-04-14T02:01:39.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    }
+  ]
+}
